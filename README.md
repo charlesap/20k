@@ -42,4 +42,5 @@ yosys> synth_gowin -top counter -json counter.json
 exit
 
 nextpnr-gowin --json counter.json --freq 27 --write counter_pnr.json --device GW2A-LV18PG256C8/I7  --cst tangprimer20k.cst
+gowin_pack -d GW2A-18 -o counter.fs counter_pnr.json
 ```
