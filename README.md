@@ -1,6 +1,7 @@
 # 20k
 Tang Nano 20k experiments
 
+## install tools
 From https://learn.lushaylabs.com/os-toolchain-manual-installation/
 
 brew install pyenv
@@ -33,4 +34,13 @@ make
 sudo make install
 
 brew install openfpgaloader
+
+## counter example
+
+yosys
+yosys> read_verilog counter.v
+yosys> synth_gowin -top counter -json counter.json
+exit
+
+nextpnr-gowin --json counter.json --freq 27 --write counter_pnr.json --device GW2A-LV18PG256C8/I7  --cst tangprimer20k.cst
 
